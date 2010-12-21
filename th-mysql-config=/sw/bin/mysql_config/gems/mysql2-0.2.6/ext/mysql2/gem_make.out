@@ -1,0 +1,25 @@
+/opt/local/bin/ruby extconf.rb
+checking for rb_thread_blocking_region()... no
+checking for mysql.h... yes
+checking for errmsg.h... yes
+checking for mysqld_error.h... yes
+creating Makefile
+
+make
+/usr/bin/gcc-4.0 -I. -I. -I/opt/local/lib/ruby/1.8/i686-darwin9 -I. -DHAVE_MYSQL_H -DHAVE_ERRMSG_H -DHAVE_MYSQLD_ERROR_H -I/opt/local/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE  -I/opt/local/include -I'/sw/include/mysql' -fno-common -O2 -arch i386  -fno-common -pipe -fno-common  -Wall -funroll-loops -arch i386 -c client.c
+client.c: In function ‘rb_raise_mysql2_error’:
+client.c:80: warning: implicit declaration of function ‘mysql_sqlstate’
+client.c:80: warning: passing argument 1 of ‘rb_tainted_str_new2’ makes pointer from integer without a cast
+client.c: In function ‘rb_mysql_client_info’:
+client.c:374: warning: implicit declaration of function ‘mysql_get_client_version’
+client.c: In function ‘rb_mysql_client_server_info’:
+client.c:397: warning: implicit declaration of function ‘mysql_get_server_version’
+client.c: In function ‘set_reconnect’:
+client.c:441: error: ‘MYSQL_OPT_RECONNECT’ undeclared (first use in this function)
+client.c:441: error: (Each undeclared identifier is reported only once
+client.c:441: error: for each function it appears in.)
+client.c: In function ‘set_connect_timeout’:
+client.c:458: warning: passing argument 3 of ‘mysql_options’ from incompatible pointer type
+client.c: In function ‘set_ssl_options’:
+client.c:496: warning: implicit declaration of function ‘mysql_ssl_set’
+make: *** [client.o] Error 1
