@@ -1,4 +1,6 @@
 Search::Application.routes.draw do
+  match "pages/search"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

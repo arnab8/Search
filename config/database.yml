@@ -22,10 +22,10 @@ test:
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  database: search_test
+  database: vaniquotes2
   pool: 5
   username: root
-  password:
+  password: '1931'
   socket: /tmp/mysql.sock
 
 production:

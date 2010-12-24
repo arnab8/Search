@@ -1,0 +1,5 @@
+<% pages = Array.new %>
+<% pages = @pages.map do	|p| %>
+	<% p.page_title.gsub('_', ' ') %>
+<% end %>
+<%= raw(pages.to_json) %>

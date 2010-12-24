@@ -1,0 +1,5 @@
+<% pages = Hash.new %>
+<% @pages.each do	|p| %>
+	<% pages.store( 'page-title', p.page_title.gsub('_', ' ') ) %>
+<% end %>
+<%= raw(pages.to_xml) %>

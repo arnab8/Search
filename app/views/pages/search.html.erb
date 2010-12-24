@@ -1,0 +1,26 @@
+<%= form_tag do %>
+<p>
+	<%= label_tag(:q, "Search for:") %>
+  <%= text_field_tag(:q, params[:q]) %>
+</p>
+<p>
+	<%= label_tag(:q, "Search in:") %>
+	<%= check_box_tag :categories, !params[:categories].nil? %>
+	<%= label_tag(:categories, "Categories") %>
+	<%= check_box_tag :pages, !params[:pages].nil? %>
+	<%= label_tag(:pages, "Pages") %>
+</p>
+<p>  
+<%= submit_tag("Search") %>
+</p>
+<% end %>
+
+<div id="pages">
+	<% if @pages.nil? %>
+			<p><%= "No matches..."  %></p>
+	<% else %>
+		<% @pages.each do |p|%>
+			<p><%= p.page_title %></p>
+		<% end %>
+	<% end %>
+</div>

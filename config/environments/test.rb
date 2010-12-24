@@ -1,6 +1,10 @@
 Search::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
 
+  # Settings for wiki tables
+  config.active_record.pluralize_table_names = false
+  config.active_record.table_name_prefix = 'vaniquotes_'
+
   # The test environment is used exclusively to run your application's
   # test suite.  You never need to work with it otherwise.  Remember that
   # your test database is "scratch space" for the test suite and is wiped
