@@ -18,13 +18,4 @@ class Page < ActiveRecord::Base
     p.limit(10)
   end
   
-  def self.to_list pages
-    return '' if pages.nil?
-    p = pages.map do |p|
-      # {:label => p.page_id, :value => p.page_title }
-      p.page_title
-    end
-    p.to_json
-  end
-  
 end

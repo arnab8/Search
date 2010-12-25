@@ -1,5 +1,7 @@
 <% pages = Array.new %>
-<% pages = @pages.map do	|p| %>
-	<% p.page_title.gsub('_', ' ') %>
+<% @pages.each do	|p| %>
+	<% t = p.page_title.gsub('_', ' ') %>
+	<% ns = p.page_namespace == 14 ? 'category' : 'page' %>
+	<% pages << { ns, t} %>
 <% end %>
 <%= raw(pages.to_json) %>

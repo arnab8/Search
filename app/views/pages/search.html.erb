@@ -5,9 +5,9 @@
 </p>
 <p>
 	<%= label_tag(:q, "Search in:") %>
-	<%= check_box_tag :categories, !params[:categories].nil? %>
+	<%= check_box_tag :categories, 'true', !params[:categories].nil? %>
 	<%= label_tag(:categories, "Categories") %>
-	<%= check_box_tag :pages, !params[:pages].nil? %>
+	<%= check_box_tag :pages, 'true', !params[:pages].nil? %>
 	<%= label_tag(:pages, "Pages") %>
 </p>
 <p>  
