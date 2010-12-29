@@ -1,5 +1,6 @@
-<% pages = Hash.new %>
+<% pages = Array.new %>
 <% @pages.each do	|p| %>
-	<% pages.store( 'page-title', p.page_title.gsub('_', ' ') ) %>
+	<% ns = p.page_namespace == 14 ? 'category' : 'page' %>
+	<% pages.push({ 'page-title' => p.page_title.gsub('_', ' '), :ns => ns }) %>
 <% end %>
 <%= raw(pages.to_xml) %>

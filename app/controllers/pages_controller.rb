@@ -14,7 +14,6 @@ class PagesController < ApplicationController
         @pages = Page.search_in_all(params[:q])        
       end
     end
-
     respond_with @pages
   end
 

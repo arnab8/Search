@@ -1,6 +1,9 @@
 Search::Application.routes.draw do
-  match "pages/search"
+  get 'page(/:q)'     => 'pages#search', :ns => '0'
+  get "all(/:q)"      => "pages#search", :ns => 'all'
+  get "category(/:q)" => "pages#search", :ns => '14'
 
+  root :to => "pages#search"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

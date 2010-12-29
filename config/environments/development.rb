@@ -23,10 +23,6 @@ Search::Application.configure do
   # Only use best-standards-support built into browsers
   config.action_dispatch.best_standards_support = :builtin
   
-  # Settings for wiki tables
-  config.active_record.pluralize_table_names = false
-  config.active_record.table_name_prefix = 'vaniquotes_'
-  
   # for ajax queries
   config.action_controller.use_accept_header = false
   
