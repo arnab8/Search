@@ -15,7 +15,7 @@ class Page < ActiveRecord::Base
       p ||= Page.scoped
       p = p.where("UPPER(page_title) LIKE UPPER(?)", "%#{q}%")
     end
-    p.limit(25)
+    p.limit(64)
   end
   
 end
