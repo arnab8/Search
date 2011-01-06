@@ -13,7 +13,7 @@ class Page < ActiveRecord::Base
     p = nil
     keywords.split.each do |q|
       p ||= Page.scoped
-      p = p.where("UPPER(page_title) LIKE UPPER(?)", "%#{q}%")
+      p = p.where("UPPER(page_title) REGEXP UPPER(?)", "(^|\_)#{q}")
     end
     p.limit(64)
   end
